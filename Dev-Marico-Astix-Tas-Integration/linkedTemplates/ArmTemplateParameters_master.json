@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "Dev-Marico-Astix-Tas-Integration"
+		},
+		"AstixProdServer_connectionString": {
+			"value": ""
+		},
+		"MaricoAstixTASDB_connectionString": {
+			"value": ""
+		},
+		"MaricoDB_connectionString": {
+			"value": ""
+		},
+		"Marico_Live_connectionString": {
+			"value": ""
+		},
+		"MaricoIR-Live_properties_typeProperties_linkedInfo_resourceId": {
+			"value": "/subscriptions/fe170601-f4c0-4126-b51f-5207692ac191/resourcegroups/RGMarico/providers/Microsoft.DataFactory/factories/Marico-Astix-Tas-Integration/integrationruntimes/MaricoIR-Live"
+		},
+		"MaricoIntegrationRuntime_properties_typeProperties_linkedInfo_resourceId": {
+			"value": "/subscriptions/fe170601-f4c0-4126-b51f-5207692ac191/resourcegroups/RGMarico/providers/Microsoft.DataFactory/factories/Marico-Astix-Tas-Integration/integrationruntimes/MaricoIntegrationRuntime"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}

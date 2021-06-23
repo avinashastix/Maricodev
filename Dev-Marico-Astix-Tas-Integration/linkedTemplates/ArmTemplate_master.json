@@ -1,0 +1,164 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "Dev-Marico-Astix-Tas-Integration"
+		},
+		"AstixProdServer_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'AstixProdServer'"
+		},
+		"MaricoAstixTASDB_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'MaricoAstixTASDB'"
+		},
+		"MaricoDB_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'MaricoDB'"
+		},
+		"Marico_Live_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'Marico_Live'"
+		},
+		"MaricoIR-Live_properties_typeProperties_linkedInfo_resourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/fe170601-f4c0-4126-b51f-5207692ac191/resourcegroups/RGMarico/providers/Microsoft.DataFactory/factories/Marico-Astix-Tas-Integration/integrationruntimes/MaricoIR-Live"
+		},
+		"MaricoIntegrationRuntime_properties_typeProperties_linkedInfo_resourceId": {
+			"type": "string",
+			"defaultValue": "/subscriptions/fe170601-f4c0-4126-b51f-5207692ac191/resourcegroups/RGMarico/providers/Microsoft.DataFactory/factories/Marico-Astix-Tas-Integration/integrationruntimes/MaricoIntegrationRuntime"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "Dev-Marico-Astix-Tas-Integration_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AstixProdServer_connectionString": {
+						"value": "[parameters('AstixProdServer_connectionString')]"
+					},
+					"MaricoAstixTASDB_connectionString": {
+						"value": "[parameters('MaricoAstixTASDB_connectionString')]"
+					},
+					"MaricoDB_connectionString": {
+						"value": "[parameters('MaricoDB_connectionString')]"
+					},
+					"MaricoIR-Live_properties_typeProperties_linkedInfo_resourceId": {
+						"value": "[parameters('MaricoIR-Live_properties_typeProperties_linkedInfo_resourceId')]"
+					},
+					"MaricoIntegrationRuntime_properties_typeProperties_linkedInfo_resourceId": {
+						"value": "[parameters('MaricoIntegrationRuntime_properties_typeProperties_linkedInfo_resourceId')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "Dev-Marico-Astix-Tas-Integration_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"Marico_Live_connectionString": {
+						"value": "[parameters('Marico_Live_connectionString')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'Dev-Marico-Astix-Tas-Integration_ArmTemplate_0')]"
+			]
+		},
+		{
+			"name": "Dev-Marico-Astix-Tas-Integration_ArmTemplate_2",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_2.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'Dev-Marico-Astix-Tas-Integration_ArmTemplate_1')]"
+			]
+		},
+		{
+			"name": "Dev-Marico-Astix-Tas-Integration_ArmTemplate_3",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_3.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'Dev-Marico-Astix-Tas-Integration_ArmTemplate_2')]"
+			]
+		},
+		{
+			"name": "Dev-Marico-Astix-Tas-Integration_ArmTemplate_4",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_4.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'Dev-Marico-Astix-Tas-Integration_ArmTemplate_3')]"
+			]
+		}
+	]
+}
