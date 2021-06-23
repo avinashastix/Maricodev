@@ -1,0 +1,12 @@
+{
+	"name": "MaricoIR-Live",
+	"properties": {
+		"type": "SelfHosted",
+		"typeProperties": {
+			"linkedInfo": {
+				"resourceId": "/subscriptions/fe170601-f4c0-4126-b51f-5207692ac191/resourcegroups/RGMarico/providers/Microsoft.DataFactory/factories/Marico-Astix-Tas-Integration/integrationruntimes/MaricoIR-Live",
+				"authorizationType": "Rbac"
+			}
+		}
+	}
+}
