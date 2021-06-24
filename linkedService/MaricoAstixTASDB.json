@@ -6,7 +6,7 @@
 		"type": "AzureSqlDatabase",
 		"typeProperties": {
 			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=marico.database.windows.net;initial catalog=db_maricotas_Dev21Jun21;user id=Maricodbadmin",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRFVi1NQVJJQ08tQVNUSVgtVEFTLUlOVEVHUkFUSU9OXzg5ZmRhMzVkLTQyOGYtNGZmMi1iNmRiLWI4OGE3MDgxZjRmNSINCn0="
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRFVi1NQVJJQ08tQVNUSVgtVEFTLUlOVEVHUkFUSU9OXzZhY2RjYTQ4LTFhNzEtNDA0ZS05MjU4LTllOGNlNDM0ZGI5MSINCn0="
 		}
 	}
 }
