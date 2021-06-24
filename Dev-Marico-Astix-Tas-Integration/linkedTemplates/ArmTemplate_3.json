@@ -2193,16 +2193,6 @@
 											"type": "DateTime",
 											"physicalType": "datetime"
 										}
-									},
-									{
-										"source": {
-											"name": "SchedulerCycleDateTime"
-										},
-										"sink": {
-											"name": "SchedulerCycleDateTime",
-											"type": "TimeSpan",
-											"physicalType": "time"
-										}
 									}
 								],
 								"typeConversion": true,
@@ -2330,16 +2320,6 @@
 											"name": "CreatedDate",
 											"type": "DateTime",
 											"physicalType": "datetime"
-										}
-									},
-									{
-										"source": {
-											"name": "SchedulerCycleDateTime"
-										},
-										"sink": {
-											"name": "SchedulerCycleDateTime",
-											"type": "TimeSpan",
-											"physicalType": "time"
 										}
 									}
 								],
