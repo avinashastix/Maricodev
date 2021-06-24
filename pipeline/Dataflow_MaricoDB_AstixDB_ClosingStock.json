@@ -569,7 +569,7 @@
 							"type": "SqlServerStoredProcedure",
 							"dependsOn": [
 								{
-									"activity": "Source Data Delete",
+									"activity": "SpCycFileEntry_End",
 									"dependencyConditions": [
 										"Succeeded"
 									]
@@ -610,49 +610,6 @@
 									"Type": {
 										"value": "2",
 										"type": "Byte"
-									}
-								}
-							},
-							"linkedServiceName": {
-								"referenceName": "Marico_Live",
-								"type": "LinkedServiceReference"
-							}
-						},
-						{
-							"name": "Source Data Delete",
-							"type": "SqlServerStoredProcedure",
-							"dependsOn": [
-								{
-									"activity": "SpCycFileEntry_End",
-									"dependencyConditions": [
-										"Succeeded"
-									]
-								}
-							],
-							"policy": {
-								"timeout": "7.00:00:00",
-								"retry": 0,
-								"retryIntervalInSeconds": 30,
-								"secureOutput": false,
-								"secureInput": false
-							},
-							"userProperties": [],
-							"typeProperties": {
-								"storedProcedureName": "[dbo].[SpTransactionDataArchive]",
-								"storedProcedureParameters": {
-									"FileID": {
-										"value": {
-											"value": "@item().FileID",
-											"type": "Expression"
-										},
-										"type": "Int32"
-									},
-									"RowID": {
-										"value": {
-											"value": "@item().RowID",
-											"type": "Expression"
-										},
-										"type": "Int32"
 									}
 								}
 							},
