@@ -1740,7 +1740,7 @@
 					"connectionString": "[parameters('Marico_Live_connectionString')]"
 				},
 				"connectVia": {
-					"referenceName": "MaricoIR-Live",
+					"referenceName": "MaricoIntegrationRuntime",
 					"type": "IntegrationRuntimeReference"
 				}
 			},
